@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <script>
+        // Define Book objects
+        let books = [
+            {
+                title: "The Great Gatsby",
+                author: "F. Scott Fitzgerald",
+                pages: 218,
+                price: 10
+            },
+            {
+                title: "A new book",
+                author: "Thom Hanks",
+                pages: 218,
+                price: 12
+            }
+        ];
+        // Function to generate book details
+        function displayBookDetails(book) {
+            let bookDetails = "Title: " + book.title + ", Author: " + book.author + ", Pages: " + book.pages + ", Price: $" + book.price;
+            document.getElementById("bookDetails").innerHTML = bookDetails;
+        }
+
+        //calculae total
+        function calculateTotalPrice() {
+            let total = books[0].price + books[1].price;
+            document.getElementById("total").innerHTML = "Total: $" + total;
+        }
+    
+    </script>
+</head>
+<body>
+    <h1>Book Details</h1>
+    <div id="bookDetails"></div>
+    <button onclick="displayBookDetails(books[0])">Show a specific book</button>
+    <div id="bookDetails2"></div>
+    <button onclick="displayBookDetails(books[1])">Show a specific book</button></br>
+    <div id="total"></div>
+    <button onclick="calculateTotalPrice()">calculate</button>
+</body>
+</html>
