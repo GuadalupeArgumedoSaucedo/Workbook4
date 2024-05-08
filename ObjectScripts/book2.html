@@ -11,36 +11,54 @@
                 title: "The Great Gatsby",
                 author: "F. Scott Fitzgerald",
                 pages: 218,
-                price: 10
+                price: 10,
+                instock: true,
             },
             {
                 title: "A new book",
                 author: "Thom Hanks",
                 pages: 218,
-                price: 12
+                price: 12,
+                instock: false,
+            },
+            {
+                title: "Harry Potter and the Sorcerer's Stone", 
+                author: "J.K. Rowling", 
+                pages: 320, 
+                price: 15, 
+                instock: true, 
             }
         ];
         // Function to generate book details
         function displayBookDetails(book) {
-            let bookDetails = "Title: " + book.title + ", Author: " + book.author + ", Pages: " + book.pages + ", Price: $" + book.price;
+            let bookDetails = "Title: " + book.title + ", Author: " + book.author + ", Pages: " + book.pages + ", Price: $" + book.price + ", In stock: " + book.instock;
             document.getElementById("bookDetails").innerHTML = bookDetails;
         }
 
         //calculae total
         function calculateTotalPrice() {
-            let total = books[0].price + books[1].price;
+            let total = books[0].price + books[1].price + books[2].price;
             document.getElementById("total").innerHTML = "Total: $" + total;
         }
     
+        function calculateDiscount() {
+            let totaldiscount = (books[0].price + books[1].price + books[1].price) *.2;
+            let pricewithdicount = (books[0].price + books[1].price + books[1].price) - totaldiscount;
+            document.getElementById("totaldiscount").innerHTML = "Total with discount: $" + pricewithdicount;
+        }
     </script>
 </head>
 <body>
     <h1>Book Details</h1>
     <div id="bookDetails"></div>
-    <button onclick="displayBookDetails(books[0])">Show a specific book</button>
+    <button onclick="displayBookDetails(books[0])">The Great Gatsby</button>
     <div id="bookDetails2"></div>
-    <button onclick="displayBookDetails(books[1])">Show a specific book</button></br>
+    <button onclick="displayBookDetails(books[1])">A new book</button></br>
+    <div id="bookDetails3"></div>
+    <button onclick="displayBookDetails(books[2])">Harry Potter and the Sorcerer's Stone</button></br>
     <div id="total"></div>
     <button onclick="calculateTotalPrice()">calculate</button>
+    <div id="totaldiscount"></div>
+    <button onclick="calculateDiscount()">calculate with 20% dicount</button>
 </body>
 </html>
