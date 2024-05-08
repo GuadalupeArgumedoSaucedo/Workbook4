@@ -39,8 +39,7 @@ let myObject = {
     zip: "85364",
 }
 
-//console.log(myObject.age)
+console.log(myObject.age)
 
-//function printContact() {}
-
-//printContact(console.log())
+function printContact() {}
+printContact(console.log())
