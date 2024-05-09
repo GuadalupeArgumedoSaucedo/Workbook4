@@ -1,9 +1,19 @@
-function parsePartCode(partCode) {
-    const [supplierCode, productNumber, size] = partCode.split(/:|-/).map(str => str.trim());
+function parsePartcode(code)
+{
+    let parts = code.split(":");
+    let partCode1 = parts[0];
+    let partCode2 = parts[1].split("-")[0];
+    let partCode3 = parts[1].split("-")[1];
+    
+    const product = {
+        supplierCode: partCode1, 
+        productNumber: partCode2, 
+        size: partCode3 
+    };
+    return product
+};
 
-    return { supplierCode, productNumber, size };
-}
 
-const partCode1 = "XYZ:1234-L";
-const part1 = parsePartCode(partCode1);
-console.log(`Supplier: ${part1.supplierCode} Product Number: ${part1.productNumber} Size: ${part1.size}`);
+let shoes = "abs:92348-xl";
+let displayProduct = parsePartcode(shoes);
+console.log(`Supplier Code: ${displayProduct.supplierCode} Supplier Code: ${displayProduct.supplierCode} Supplier Code: ${displayProduct.supplierCode}`)
