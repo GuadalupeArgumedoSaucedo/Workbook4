@@ -1,3 +1,0 @@
-function parsePartCode(partCode) {
-    
-}

@@ -11,18 +11,27 @@ for (let i = 0; i <4; i++) {
     console.log(`Student ${i + 1}: ${students[i]}`);
 }
 
+console.log("--------------------------------------------------");
+
 //for each example (Looping over all the students always)
 students.forEach(student => {
     console.log(`Student ${student}`);
 });
 
+console.log("--------------------------------------------------");
+
 //for of: ( a newer way of writing just like var / let)
 for (const student of students) {
     console.log(`Student: ${student}`);
 }
+
+console.log("--------------------------------------------------");
+
 //for in is typically used in Array of objects:
 for (const index in students2) {
     if (students2.hasOwnProperty(index)) {  // Ensures that we're only accessing direct properties
         console.log(`Student ${students2[index].name}, Age: ${students2[index].age}`);
     }
-}l
+}
+
+console.log("--------------------------------------------------");

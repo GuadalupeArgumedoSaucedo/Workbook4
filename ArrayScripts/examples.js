@@ -52,4 +52,4 @@ function getKids() {
      mealCost = getMealCost(yourOrder); 
      totalWithTip = mealCost * 1.2; 
      console.log("Your meal costs " + totalWithTip.toFixed(2));  
-    
+   
